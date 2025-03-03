@@ -1,0 +1,118 @@
+/* Custom styles on top of Tailwind */
+.format-button {
+    @apply w-full text-left px-3 sm:px-6 py-3 sm:py-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-all duration-200 transform hover:scale-[1.01];
+}
+
+.format-button:disabled {
+    @apply opacity-50 cursor-not-allowed transform-none;
+}
+
+/* Mobile-first approach */
+#video-info .flex.items-start {
+    @apply flex-col sm:flex-row gap-4;
+}
+
+#video-info #video-thumbnail {
+    @apply w-full sm:w-64 mx-auto sm:mx-0 max-w-xs rounded-lg shadow-md;
+}
+
+/* Format list items */
+#format-list .format-button {
+    @apply overflow-hidden;
+}
+
+/* Available formats heading */
+#format-list h3 {
+    @apply text-lg sm:text-xl mb-2 sm:mb-4;
+}
+
+/* Loading animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Download button animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-5%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+.animate-bounce {
+    animation: bounce 1s infinite;
+}
+
+/* Dark mode transition */
+.dark {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Custom input styles */
+input[type="url"] {
+    @apply text-base sm:text-lg;
+}
+
+input[type="url"]::placeholder {
+    @apply text-gray-400 text-sm sm:text-base;
+}
+
+/* Format button improvements */
+.format-button .format-info {
+    @apply flex-grow;
+}
+
+.format-button .format-quality {
+    @apply text-xs sm:text-sm py-1 px-2 rounded-full bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200;
+}
+
+.format-button .format-size {
+    @apply text-xs sm:text-sm text-gray-500 dark:text-gray-400;
+}
+
+/* URL Input Form */
+.download-button {
+    @apply text-base;
+}
+
+@media (max-width: 640px) {
+    .download-button svg {
+        @apply w-5 h-5;
+    }
+
+    .download-button {
+        @apply py-3;
+    }
+
+    #url-form .flex.items-center {
+        @apply p-3;
+    }
+}
+
+/* Section transitions */
+#video-info, #error-message {
+    @apply transition-all duration-300 ease-in-out;
+}
+
+/* Format sections */
+.format-section {
+    @apply space-y-4;
+}
+
+.format-section h4 {
+    @apply flex items-center text-lg font-medium;
+}
+
+.format-section svg {
+    @apply mr-2;
+}
